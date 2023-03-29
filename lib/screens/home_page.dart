@@ -13,7 +13,7 @@ class _HomePageState extends State<HomePage> {
   var userQuestion = '';
   var userAnswer = '';
 
-  // final myTextStyle = TextStyle(fontSize: 30, color: Colors.deepPurple[900]);
+  final myTextStyle = TextStyle(fontSize: 30, color: Colors.deepPurple[900]);
 
   final List<String> buttons = [
     'C',
@@ -85,6 +85,7 @@ class _HomePageState extends State<HomePage> {
                     buttonTapped: () {
                       setState(() {
                         userQuestion = '';
+                        userAnswer = '';
                       });
                     },
                     color: Colors.green,
@@ -140,10 +141,11 @@ class _HomePageState extends State<HomePage> {
   }
 
   bool isOperator(String x) {
-    if (x == '/' || x == '%' || x == 'x' || x == '=' || x == '-' || x == '+')
+    if (x == '/' || x == '%' || x == 'x' || x == '-' || x == '+') {
       return true;
-    else
+    } else {
       return false;
+    }
   }
 
   void equalPressed() {
